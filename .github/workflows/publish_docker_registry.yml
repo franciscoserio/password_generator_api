@@ -2,8 +2,8 @@ name: Create and publish a Docker image
 
 on:
   push:
-    branches:
-      - '*'
+    tags:
+      - 'v*'
 
 env:
   REGISTRY: ghcr.io
@@ -19,6 +19,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
+      - name: Exit if not on master branch
+        if: endsWith(github.ref, '16-add-workflow-for-creating-packages') == false
+        run: exit -1
 
       - name: Log in to the Container registry
         uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9

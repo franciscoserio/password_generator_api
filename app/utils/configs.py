@@ -1,0 +1,17 @@
+import os
+
+# algorithm for jwt token
+ALGORITHM = "HS256"
+
+SECRET_KEY_DEFAULT = "test"
+SECRET_KEY = os.environ.get("SECRET_KEY", SECRET_KEY_DEFAULT)
+
+ACCESS_TOKEN_EXPIRE_MINUTES_DEFAULT = 60
+try:
+    ACCESS_TOKEN_EXPIRE_MINUTES = int(
+        os.environ.get(
+            "ACCESS_TOKEN_EXPIRE_MINUTES", ACCESS_TOKEN_EXPIRE_MINUTES_DEFAULT
+        )
+    )
+except ValueError:
+    ACCESS_TOKEN_EXPIRE_MINUTES = ACCESS_TOKEN_EXPIRE_MINUTES_DEFAULT

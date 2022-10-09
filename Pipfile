@@ -10,6 +10,7 @@ sqlalchemy = "*"
 passlib = "*"
 bcrypt = "*"
 python-jose = "*"
+psycopg2 = "*"
 
 [dev-packages]
 

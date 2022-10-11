@@ -11,6 +11,8 @@ passlib = "*"
 bcrypt = "*"
 python-jose = "*"
 psycopg2 = "*"
+pytest = "*"
+requests = "*"
 
 [dev-packages]
 

@@ -13,6 +13,7 @@ python-jose = "*"
 psycopg2 = "*"
 pytest = "*"
 requests = "*"
+black = "*"
 
 [dev-packages]
 
